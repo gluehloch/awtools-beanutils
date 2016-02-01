@@ -1,8 +1,7 @@
 /*
- * $Id: PropertyMediatorDynaBean.java 2297 2010-07-23 07:11:30Z andrewinkler $
  * ============================================================================
  * Project awtools-beanutils
- * Copyright (c) 2004-2010 by Andre Winkler. All rights reserved.
+ * Copyright (c) 2004-2016 by Andre Winkler. All rights reserved.
  * ============================================================================
  *          GNU LESSER GENERAL PUBLIC LICENSE
  *  TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
@@ -34,8 +33,7 @@ import org.apache.commons.beanutils.DynaClass;
 /**
  * Ein <code>BasicDynaBean</code> mit PropertyChange-Mechanismus.
  * 
- * @version $LastChangedRevision: 2297 $ $LastChangedDate: 2010-07-23 09:11:30 +0200 (Fr, 23 Jul 2010) $
- * @author by Andre Winkler, $LastChangedBy: andrewinkler $
+ * @author by Andre Winkler
  */
 public class PropertyMediatorDynaBean extends BasicDynaBean implements
         EventMediatorService {

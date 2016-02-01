@@ -1,8 +1,7 @@
 /*
- * $Id: BeanInstanceUtils.java 3632 2013-03-22 06:53:56Z andrewinkler $
  * ============================================================================
  * Project awtools-beanutils
- * Copyright (c) 2000-2010 by Andre Winkler. All rights reserved.
+ * Copyright (c) 2000-2016 by Andre Winkler. All rights reserved.
  * ============================================================================
  *          GNU LESSER GENERAL PUBLIC LICENSE
  *  TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
@@ -31,8 +30,7 @@ package de.awtools.bean;
  * kapseln und die potentiellen 'Checked Exceptions' in 'RuntimeExceptions'
  * umwandeln.
  * 
- * @version $LastChangedRevision: 3632 $ $LastChangedDate: 2013-03-22 07:53:56 +0100 (Fr, 22 Mrz 2013) $
- * @author by Andre Winkler, $LastChangedBy: andrewinkler $
+ * @author by Andre Winkler
  */
 public final class BeanInstanceUtils {
 

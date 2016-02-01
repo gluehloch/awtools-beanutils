@@ -1,8 +1,7 @@
 /*
- * $Id: BeanIntrospectionTest.java 2297 2010-07-23 07:11:30Z andrewinkler $
  * ============================================================================
  * Project awtools-beanutils
- * Copyright (c) 2004-2010 by Andre Winkler. All rights reserved.
+ * Copyright (c) 2004-2016 by Andre Winkler. All rights reserved.
  * ============================================================================
  *          GNU LESSER GENERAL PUBLIC LICENSE
  *  TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
@@ -37,8 +36,7 @@ import org.junit.Test;
  * Testet das Verhalten von Java Beans mittels Bean-Introspection und
  * BeanPropertyDescriptor.
  * 
- * @author  $Author: andrewinkler $
- * @version $Revision: 2297 $ $Date: 2010-07-23 09:11:30 +0200 (Fr, 23 Jul 2010) $
+ * @author Andre Winkler
  */
 public class BeanIntrospectionTest {
 
