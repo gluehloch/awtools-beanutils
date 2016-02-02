@@ -34,104 +34,115 @@ import java.beans.PropertyChangeListener;
  */
 public interface EventMediatorService {
 
-    /**
-     * Fügt einen <code>PropertyChangeListener</code> diesem Objekt hinzu.
-     * 
-     * @param listener Observiert den Zustand dieses Objekts.
-     */
-    public void addPropertyChangeListener(PropertyChangeListener listener);
+	/**
+	 * Fügt einen <code>PropertyChangeListener</code> diesem Objekt hinzu.
+	 * 
+	 * @param listener
+	 *            Observiert den Zustand dieses Objekts.
+	 */
+	public void addPropertyChangeListener(PropertyChangeListener listener);
 
-    /**
-     * Fügt einen <code>PropertyChangeListener</code> diesem Objekt hinzu,
-     * welches nur an der Eigenschaft <code>property</code> interessiert ist.
-     * 
-     * @param property Die zu observierende Eigenschaft.
-     * @param listener Observiert den Zustand dieses Objekts.
-     */
-    public void addPropertyChangeListener(String property,
-        PropertyChangeListener listener);
+	/**
+	 * Fügt einen <code>PropertyChangeListener</code> diesem Objekt hinzu,
+	 * welches nur an der Eigenschaft <code>property</code> interessiert ist.
+	 * 
+	 * @param property
+	 *            Die zu observierende Eigenschaft.
+	 * @param listener
+	 *            Observiert den Zustand dieses Objekts.
+	 */
+	public void addPropertyChangeListener(String property, PropertyChangeListener listener);
 
-    /**
-     * Feuert eine <code>PropertyChangeEvent</code>.
-     * 
-     * @param evt Eine <code>PropertyChangeEvent</code>.
-     */
-    public void firePropertyChange(PropertyChangeEvent evt);
+	/**
+	 * Feuert eine <code>PropertyChangeEvent</code>.
+	 * 
+	 * @param evt
+	 *            Eine <code>PropertyChangeEvent</code>.
+	 */
+	public void firePropertyChange(PropertyChangeEvent evt);
 
-    /**
-     * Feuert ein <code>PropertyChangeEvent</code>.
-     * 
-     * @param propertyName Die Eigenschaft.
-     * @param oldValue Der alte Wert.
-     * @param newValue Der neue Wert.
-     */
-    public void firePropertyChange(String propertyName, boolean oldValue,
-        boolean newValue);
+	/**
+	 * Feuert ein <code>PropertyChangeEvent</code>.
+	 * 
+	 * @param propertyName
+	 *            Die Eigenschaft.
+	 * @param oldValue
+	 *            Der alte Wert.
+	 * @param newValue
+	 *            Der neue Wert.
+	 */
+	public void firePropertyChange(String propertyName, boolean oldValue, boolean newValue);
 
-    /**
-     * Feuert ein <code>PropertyChangeEvent</code>.
-     * 
-     * @param propertyName Die Eigenschaft.
-     * @param oldValue Der alte Wert.
-     * @param newValue Der neue Wert.
-     */
-    public void firePropertyChange(String propertyName, int oldValue,
-        int newValue);
+	/**
+	 * Feuert ein <code>PropertyChangeEvent</code>.
+	 * 
+	 * @param propertyName
+	 *            Die Eigenschaft.
+	 * @param oldValue
+	 *            Der alte Wert.
+	 * @param newValue
+	 *            Der neue Wert.
+	 */
+	public void firePropertyChange(String propertyName, int oldValue, int newValue);
 
-    /**
-     * Feuert ein <code>PropertyChangeEvent</code>.
-     * 
-     * @param propertyName Die Eigenschaft.
-     * @param oldValue Der alte Wert.
-     * @param newValue Der neue Wert.
-     */
-    public void firePropertyChange(String propertyName, Object oldValue,
-        Object newValue);
+	/**
+	 * Feuert ein <code>PropertyChangeEvent</code>.
+	 * 
+	 * @param propertyName
+	 *            Die Eigenschaft.
+	 * @param oldValue
+	 *            Der alte Wert.
+	 * @param newValue
+	 *            Der neue Wert.
+	 */
+	public void firePropertyChange(String propertyName, Object oldValue, Object newValue);
 
-    public void fireIndexedPropertyChange(String propertyName, int index,
-        Object oldValue, Object newValue);
+	public void fireIndexedPropertyChange(String propertyName, int index, Object oldValue, Object newValue);
 
-    /**
-     * Liefert alle <code>PropertyChangeListener</code>.
-     * 
-     * @return Eine Array mit <code>PropertyChangeListener</code>.
-     */
-    public PropertyChangeListener[] getPropertyChangeListeners();
+	/**
+	 * Liefert alle <code>PropertyChangeListener</code>.
+	 * 
+	 * @return Eine Array mit <code>PropertyChangeListener</code>.
+	 */
+	public PropertyChangeListener[] getPropertyChangeListeners();
 
-    /**
-     * Liefert alle <code>PropertyChangeListener</code> für eine bestimmte
-     * Eigenschaft.
-     * 
-     * @param propertyName Der Name der Eigenschaft.
-     * @return Eine Array mit <code>PropertyChangeListener</code>.
-     */
-    public PropertyChangeListener[] getPropertyChangeListeners(
-        String propertyName);
+	/**
+	 * Liefert alle <code>PropertyChangeListener</code> für eine bestimmte
+	 * Eigenschaft.
+	 * 
+	 * @param propertyName
+	 *            Der Name der Eigenschaft.
+	 * @return Eine Array mit <code>PropertyChangeListener</code>.
+	 */
+	public PropertyChangeListener[] getPropertyChangeListeners(String propertyName);
 
-    /**
-     * Liefert eine Frage auf die Antwort, ob für folgende Eigenschaft ein
-     * Listener vorliegt.
-     * 
-     * @param propertyName Der Name der Eigenschaft auf den die Listener hören.
-     * @return true, es hört ein Listener auf die gesuchte Eigenschaft.
-     */
-    public boolean hasListeners(String propertyName);
+	/**
+	 * Liefert eine Frage auf die Antwort, ob für folgende Eigenschaft ein
+	 * Listener vorliegt.
+	 * 
+	 * @param propertyName
+	 *            Der Name der Eigenschaft auf den die Listener hören.
+	 * @return true, es hört ein Listener auf die gesuchte Eigenschaft.
+	 */
+	public boolean hasListeners(String propertyName);
 
-    /**
-     * Entfernt einen <code>PropertyChangeListener</code>.
-     * 
-     * @param listener Entfernt diesen Listener.
-     */
-    public void removePropertyChangeListener(PropertyChangeListener listener);
+	/**
+	 * Entfernt einen <code>PropertyChangeListener</code>.
+	 * 
+	 * @param listener
+	 *            Entfernt diesen Listener.
+	 */
+	public void removePropertyChangeListener(PropertyChangeListener listener);
 
-    /**
-     * Entfernt einen <code>PropertyChangeListener</code>, welches nur an der
-     * Eigenschaft <code>property</code> interessiert war.
-     * 
-     * @param property Die zu observierende Eigenschaft.
-     * @param listener Ein <code>PropertyChangeListener</code>.
-     */
-    public void removePropertyChangeListener(String property,
-        PropertyChangeListener listener);
+	/**
+	 * Entfernt einen <code>PropertyChangeListener</code>, welches nur an der
+	 * Eigenschaft <code>property</code> interessiert war.
+	 * 
+	 * @param property
+	 *            Die zu observierende Eigenschaft.
+	 * @param listener
+	 *            Ein <code>PropertyChangeListener</code>.
+	 */
+	public void removePropertyChangeListener(String property, PropertyChangeListener listener);
 
 }

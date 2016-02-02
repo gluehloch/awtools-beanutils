@@ -32,19 +32,22 @@ package de.awtools.bean;
  */
 public interface Mapper {
 
-    /**
-     * Liefert einen Wert aus einem Domänenobjekt.
-     * 
-     * @param domainObject Das betreffende Domänenobjekt.
-     * @return Der Wert dieser Eigenschaft.
-     */
-    public Object getProperty(Object domainObject);
+	/**
+	 * Liefert einen Wert aus einem Domänenobjekt.
+	 * 
+	 * @param domainObject
+	 *            Das betreffende Domänenobjekt.
+	 * @return Der Wert dieser Eigenschaft.
+	 */
+	public Object getProperty(Object domainObject);
 
-    /**
-     * Setzt eine Eigenschaft in einem Domänenobjekt.
-     *
-     * @param domainObject Das betreffende Domänenobjekt.
-     * @param value Der Wert dieser Eigenschaft.
-     */
-    public void setProperty(Object domainObject, Object value);
+	/**
+	 * Setzt eine Eigenschaft in einem Domänenobjekt.
+	 *
+	 * @param domainObject
+	 *            Das betreffende Domänenobjekt.
+	 * @param value
+	 *            Der Wert dieser Eigenschaft.
+	 */
+	public void setProperty(Object domainObject, Object value);
 }

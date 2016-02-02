@@ -34,29 +34,31 @@ import java.beans.PropertyChangeEvent;
 public class IndexedPropertyChangeEvent extends PropertyChangeEvent {
 
 	/** serial version id */
-    private static final long serialVersionUID = -7673094218691298374L;
+	private static final long serialVersionUID = -7673094218691298374L;
 
-    /**
+	/**
 	 * Constructs a new IndexedPropertyChangeEvent object.
 	 * 
-	 * @param _source The bean that fired the event.
-	 * @param _propertyName The programmatic name of the property that was changed.
-	 * @param _index Indicator specifying the property element that was changed.
-	 * @param _oldValue The old value of the property.
-	 * @param _newValue The new value of the property.
+	 * @param _source
+	 *            The bean that fired the event.
+	 * @param _propertyName
+	 *            The programmatic name of the property that was changed.
+	 * @param _index
+	 *            Indicator specifying the property element that was changed.
+	 * @param _oldValue
+	 *            The old value of the property.
+	 * @param _newValue
+	 *            The new value of the property.
 	 */
-	public IndexedPropertyChangeEvent(
-	        final Object _source, final String _propertyName,
-	        final Object _index, final Object _oldValue,
-	        final Object _newValue) {
+	public IndexedPropertyChangeEvent(final Object _source, final String _propertyName, final Object _index,
+			final Object _oldValue, final Object _newValue) {
 
-		super (_source, _propertyName, _oldValue, _newValue);
+		super(_source, _propertyName, _oldValue, _newValue);
 		try {
-		    this.index = ((Integer) _index).intValue ();
+			this.index = ((Integer) _index).intValue();
 		} catch (Exception e) {
-		    throw new UnsupportedOperationException
-				("index must be non-null Integer (was: "
-				        + ((null == _index) ? "null" : _index.getClass ().toString ()));
+			throw new UnsupportedOperationException("index must be non-null Integer (was: "
+					+ ((null == _index) ? "null" : _index.getClass().toString()));
 		}
 	}
 
@@ -64,15 +66,15 @@ public class IndexedPropertyChangeEvent extends PropertyChangeEvent {
 
 	private int index;
 
-    /**
-     * Currently this is of type <code>Integer</code>, but this may
-     * change as soon as non-int property indices (keys) are allowed.
-     *
-     * @return The index specifying the property element that was
-     *         changed, expressed as an Object.
-     */
-    public Object getIndex() {
-        return new Integer(index);
-    }
+	/**
+	 * Currently this is of type <code>Integer</code>, but this may change as
+	 * soon as non-int property indices (keys) are allowed.
+	 *
+	 * @return The index specifying the property element that was changed,
+	 *         expressed as an Object.
+	 */
+	public Object getIndex() {
+		return new Integer(index);
+	}
 
 }

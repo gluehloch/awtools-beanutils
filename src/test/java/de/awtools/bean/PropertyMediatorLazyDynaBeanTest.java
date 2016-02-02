@@ -38,28 +38,28 @@ import org.junit.Test;
  */
 public class PropertyMediatorLazyDynaBeanTest {
 
-    private int callCounter = 0;
+	private int callCounter = 0;
 
-    @Test
-    public void testPropertyMediatorLazyBean() {
-        PropertyMediatorLazyDynaBean bean = new PropertyMediatorLazyDynaBean();
-        bean.addPropertyChangeListener(new MyPropertyChangeListener());
-        bean.set("propertyName", "oldValue");
-        Assert.assertEquals(1, callCounter);
-        bean.set("propertyName", "newValue");
-        Assert.assertEquals(2, callCounter);
-    }
+	@Test
+	public void testPropertyMediatorLazyBean() {
+		PropertyMediatorLazyDynaBean bean = new PropertyMediatorLazyDynaBean();
+		bean.addPropertyChangeListener(new MyPropertyChangeListener());
+		bean.set("propertyName", "oldValue");
+		Assert.assertEquals(1, callCounter);
+		bean.set("propertyName", "newValue");
+		Assert.assertEquals(2, callCounter);
+	}
 
-    private class MyPropertyChangeListener implements PropertyChangeListener {
-        public void propertyChange(PropertyChangeEvent evt) {
-            Assert.assertEquals("propertyName", evt.getPropertyName());
-            callCounter++;
-        }
-    }
+	private class MyPropertyChangeListener implements PropertyChangeListener {
+		public void propertyChange(PropertyChangeEvent evt) {
+			Assert.assertEquals("propertyName", evt.getPropertyName());
+			callCounter++;
+		}
+	}
 
-    @Before
-    public void setUp() {
-        callCounter = 0;
-    }
+	@Before
+	public void setUp() {
+		callCounter = 0;
+	}
 
 }

@@ -30,82 +30,87 @@ import java.beans.PropertyChangeSupport;
 /**
  * Test-Java-Bean.
  * 
- * @author  Andre Winkler
+ * @author Andre Winkler
  */
 public class AddressBean {
 
-    private PropertyChangeSupport support = new PropertyChangeSupport(this);
+	private PropertyChangeSupport support = new PropertyChangeSupport(this);
 
-    private String street;
+	private String street;
 
-    private String city;
+	private String city;
 
-    private int zip;
+	private int zip;
 
-    /**
-     * @return Returns the city.
-     */
-    public String getCity() {
-        return city;
-    }
+	/**
+	 * @return Returns the city.
+	 */
+	public String getCity() {
+		return city;
+	}
 
-    /**
-     * @param _city The city to set.
-     */
-    public void setCity(final String _city) {
-        Object oldValue = city;
-        city = _city;
-        support.firePropertyChange("city", oldValue, city);
-    }
+	/**
+	 * @param _city
+	 *            The city to set.
+	 */
+	public void setCity(final String _city) {
+		Object oldValue = city;
+		city = _city;
+		support.firePropertyChange("city", oldValue, city);
+	}
 
-    /**
-     * @return Returns the street.
-     */
-    public String getStreet() {
-        return street;
-    }
+	/**
+	 * @return Returns the street.
+	 */
+	public String getStreet() {
+		return street;
+	}
 
-    /**
-     * @param _street The street to set.
-     */
-    public void setStreet(final String _street) {
-        Object oldValue = street;
-        street = _street;
-        support.firePropertyChange("street", oldValue, street);
-    }
+	/**
+	 * @param _street
+	 *            The street to set.
+	 */
+	public void setStreet(final String _street) {
+		Object oldValue = street;
+		street = _street;
+		support.firePropertyChange("street", oldValue, street);
+	}
 
-    /**
-     * @return Returns the zip.
-     */
-    public int getZip() {
-        return zip;
-    }
+	/**
+	 * @return Returns the zip.
+	 */
+	public int getZip() {
+		return zip;
+	}
 
-    /**
-     * @param _zip The zip to set.
-     */
-    public void setZip(final int _zip) {
-        int oldValue = zip;
-        zip = _zip;
-        support.firePropertyChange("zip", oldValue, zip);
-    }
+	/**
+	 * @param _zip
+	 *            The zip to set.
+	 */
+	public void setZip(final int _zip) {
+		int oldValue = zip;
+		zip = _zip;
+		support.firePropertyChange("zip", oldValue, zip);
+	}
 
-    /**
-     * Einen {@link PropertyChangeListener} einbauen.
-     *
-     * @param listener Ein {@link PropertyChangeListener}.
-     */
-    public void addPropertyChangeListener(final PropertyChangeListener listener) {
-        support.addPropertyChangeListener(listener);
-    }
+	/**
+	 * Einen {@link PropertyChangeListener} einbauen.
+	 *
+	 * @param listener
+	 *            Ein {@link PropertyChangeListener}.
+	 */
+	public void addPropertyChangeListener(final PropertyChangeListener listener) {
+		support.addPropertyChangeListener(listener);
+	}
 
-    /**
-     * Entfernt einen {@link PropertyChangeListener}.
-     *
-     * @param listener Ein {@link PropertyChangeListener}.
-     */
-    public void removePropertyChangeListener(final PropertyChangeListener listener) {
-        support.removePropertyChangeListener(listener);
-    }
+	/**
+	 * Entfernt einen {@link PropertyChangeListener}.
+	 *
+	 * @param listener
+	 *            Ein {@link PropertyChangeListener}.
+	 */
+	public void removePropertyChangeListener(final PropertyChangeListener listener) {
+		support.removePropertyChangeListener(listener);
+	}
 
 }

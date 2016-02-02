@@ -41,52 +41,52 @@ import org.apache.commons.beanutils.PropertyUtils;
  */
 public final class DefaultPropertyMapper implements Mapper {
 
-    /** Auf diese Eigenschaft bezieht sich das Mapping. */
-    private final String property;
+	/** Auf diese Eigenschaft bezieht sich das Mapping. */
+	private final String property;
 
-    /**
-     * Konstruktor.
-     *
-     * @param _property
-     */
-    public DefaultPropertyMapper(final String _property) {
-        property = _property;
-    }
+	/**
+	 * Konstruktor.
+	 *
+	 * @param _property
+	 */
+	public DefaultPropertyMapper(final String _property) {
+		property = _property;
+	}
 
-    /**
-     * Eventuelle Exceptions, die bei der Extraktion auftreten, werden in eine
-     * <code>RuntimeException</code> umgewandelt.
-     *
-     * @see Mapper#getProperty(java.lang.Object)
-     */
-    public Object getProperty(final Object domainObject) {
-        try {
-            return PropertyUtils.getProperty(domainObject, property);
-        } catch (IllegalAccessException ex) {
-            throw new RuntimeException(ex);
-        } catch (InvocationTargetException ex) {
-            throw new RuntimeException(ex);
-        } catch (NoSuchMethodException ex) {
-            throw new RuntimeException(ex);
-        }
-    }
+	/**
+	 * Eventuelle Exceptions, die bei der Extraktion auftreten, werden in eine
+	 * <code>RuntimeException</code> umgewandelt.
+	 *
+	 * @see Mapper#getProperty(java.lang.Object)
+	 */
+	public Object getProperty(final Object domainObject) {
+		try {
+			return PropertyUtils.getProperty(domainObject, property);
+		} catch (IllegalAccessException ex) {
+			throw new RuntimeException(ex);
+		} catch (InvocationTargetException ex) {
+			throw new RuntimeException(ex);
+		} catch (NoSuchMethodException ex) {
+			throw new RuntimeException(ex);
+		}
+	}
 
-    /**
-     * Eventuelle Exceptions, die bei der Injektion auftreten, werden in eine
-     * <code>RuntimeException</code> umgewandelt.
-     *
-     * @see Mapper#setProperty(java.lang.Object, java.lang.Object)
-     */
-    public void setProperty(final Object domainObject, final Object value) {
-        try {
-            PropertyUtils.setProperty(domainObject, property, value);
-        } catch (IllegalAccessException ex) {
-            throw new RuntimeException(ex);
-        } catch (InvocationTargetException ex) {
-            throw new RuntimeException(ex);
-        } catch (NoSuchMethodException ex) {
-            throw new RuntimeException(ex);
-        }
-    }
+	/**
+	 * Eventuelle Exceptions, die bei der Injektion auftreten, werden in eine
+	 * <code>RuntimeException</code> umgewandelt.
+	 *
+	 * @see Mapper#setProperty(java.lang.Object, java.lang.Object)
+	 */
+	public void setProperty(final Object domainObject, final Object value) {
+		try {
+			PropertyUtils.setProperty(domainObject, property, value);
+		} catch (IllegalAccessException ex) {
+			throw new RuntimeException(ex);
+		} catch (InvocationTargetException ex) {
+			throw new RuntimeException(ex);
+		} catch (NoSuchMethodException ex) {
+			throw new RuntimeException(ex);
+		}
+	}
 
 }

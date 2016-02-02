@@ -40,19 +40,19 @@ import org.junit.Test;
  */
 public class BeanIntrospectionTest {
 
-    @Test
-    public void testAddressBeanPropertyDescriptor() throws Exception {
-        AddressBean addressBean = new AddressBean();
-        addressBean.setCity("Essen");
-        addressBean.setStreet("Beisenstr");
-        addressBean.setZip(4711);
+	@Test
+	public void testAddressBeanPropertyDescriptor() throws Exception {
+		AddressBean addressBean = new AddressBean();
+		addressBean.setCity("Essen");
+		addressBean.setStreet("Beisenstr");
+		addressBean.setZip(4711);
 
-        BeanInfo info = Introspector.getBeanInfo(AddressBean.class);
-        PropertyDescriptor[] descriptors = info.getPropertyDescriptors();
-        assertEquals("city", descriptors[0].getName());
-        assertEquals("class", descriptors[1].getName());
-        assertEquals("street", descriptors[2].getName());
-        assertEquals("zip", descriptors[3].getName());
-    }
+		BeanInfo info = Introspector.getBeanInfo(AddressBean.class);
+		PropertyDescriptor[] descriptors = info.getPropertyDescriptors();
+		assertEquals("city", descriptors[0].getName());
+		assertEquals("class", descriptors[1].getName());
+		assertEquals("street", descriptors[2].getName());
+		assertEquals("zip", descriptors[3].getName());
+	}
 
 }

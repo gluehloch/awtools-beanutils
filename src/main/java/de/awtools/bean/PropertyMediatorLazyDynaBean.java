@@ -34,118 +34,115 @@ import org.apache.commons.beanutils.LazyDynaBean;
  * 
  * @author by Andre Winkler
  */
-public class PropertyMediatorLazyDynaBean extends LazyDynaBean implements
-        EventMediatorService {
+public class PropertyMediatorLazyDynaBean extends LazyDynaBean implements EventMediatorService {
 
-    /** serial version id */
-    private static final long serialVersionUID = -6776482471140906565L;
+	/** serial version id */
+	private static final long serialVersionUID = -6776482471140906565L;
 
-    private final EventMediator eventSupport = new EventMediator(this);
+	private final EventMediator eventSupport = new EventMediator(this);
 
-    @Override
-    public void set(String key, Object value) {
-        Object oldValue = get(key);
-        super.set(key, value);
-        firePropertyChange(key, oldValue, value);
-    }
+	@Override
+	public void set(String key, Object value) {
+		Object oldValue = get(key);
+		super.set(key, value);
+		firePropertyChange(key, oldValue, value);
+	}
 
-    @Override
-    public void set(String key, int index, Object value) {
-        Object oldValue = get(key);
-        super.set(key, value);
-        firePropertyChange(key, oldValue, value);
-    }
+	@Override
+	public void set(String key, int index, Object value) {
+		Object oldValue = get(key);
+		super.set(key, value);
+		firePropertyChange(key, oldValue, value);
+	}
 
-    /**
-     * @see de.gluehloch.util.bean.EventMediatorService#addPropertyChangeListener(java.beans.PropertyChangeListener)
-     */
-    public void addPropertyChangeListener(PropertyChangeListener listener) {
-        eventSupport.addPropertyChangeListener(listener);
-    }
+	/**
+	 * @see de.gluehloch.util.bean.EventMediatorService#addPropertyChangeListener(java.beans.PropertyChangeListener)
+	 */
+	public void addPropertyChangeListener(PropertyChangeListener listener) {
+		eventSupport.addPropertyChangeListener(listener);
+	}
 
-    /**
-     * @see de.gluehloch.util.bean.EventMediatorService#addPropertyChangeListener(java.lang.String, java.beans.PropertyChangeListener)
-     */
-    public void addPropertyChangeListener(String property,
-        PropertyChangeListener listener) {
-        eventSupport.addPropertyChangeListener(property, listener);
-    }
+	/**
+	 * @see de.gluehloch.util.bean.EventMediatorService#addPropertyChangeListener(java.lang.String,
+	 *      java.beans.PropertyChangeListener)
+	 */
+	public void addPropertyChangeListener(String property, PropertyChangeListener listener) {
+		eventSupport.addPropertyChangeListener(property, listener);
+	}
 
-    /**
-     * @see de.gluehloch.util.bean.EventMediatorService#firePropertyChange(java.beans.PropertyChangeEvent)
-     */
-    public void firePropertyChange(PropertyChangeEvent evt) {
-        eventSupport.firePropertyChange(evt);
-    }
+	/**
+	 * @see de.gluehloch.util.bean.EventMediatorService#firePropertyChange(java.beans.PropertyChangeEvent)
+	 */
+	public void firePropertyChange(PropertyChangeEvent evt) {
+		eventSupport.firePropertyChange(evt);
+	}
 
-    /**
-     * @see de.gluehloch.util.bean.EventMediatorService#firePropertyChange(java.lang.String, boolean, boolean)
-     */
-    public void firePropertyChange(String propertyName, boolean oldValue,
-        boolean newValue) {
-        eventSupport.firePropertyChange(propertyName, oldValue, newValue);
-    }
+	/**
+	 * @see de.gluehloch.util.bean.EventMediatorService#firePropertyChange(java.lang.String,
+	 *      boolean, boolean)
+	 */
+	public void firePropertyChange(String propertyName, boolean oldValue, boolean newValue) {
+		eventSupport.firePropertyChange(propertyName, oldValue, newValue);
+	}
 
-    /**
-     * @see de.gluehloch.util.bean.EventMediatorService#firePropertyChange(java.lang.String, int, int)
-     */
-    public void firePropertyChange(String propertyName, int oldValue,
-        int newValue) {
-        eventSupport.firePropertyChange(propertyName, oldValue, newValue);
-    }
+	/**
+	 * @see de.gluehloch.util.bean.EventMediatorService#firePropertyChange(java.lang.String,
+	 *      int, int)
+	 */
+	public void firePropertyChange(String propertyName, int oldValue, int newValue) {
+		eventSupport.firePropertyChange(propertyName, oldValue, newValue);
+	}
 
-    /**
-     * @see de.gluehloch.util.bean.EventMediatorService#firePropertyChange(java.lang.String, java.lang.Object, java.lang.Object)
-     */
-    public void firePropertyChange(String propertyName, Object oldValue,
-        Object newValue) {
-        eventSupport.firePropertyChange(propertyName, oldValue, newValue);
-    }
+	/**
+	 * @see de.gluehloch.util.bean.EventMediatorService#firePropertyChange(java.lang.String,
+	 *      java.lang.Object, java.lang.Object)
+	 */
+	public void firePropertyChange(String propertyName, Object oldValue, Object newValue) {
+		eventSupport.firePropertyChange(propertyName, oldValue, newValue);
+	}
 
-    /**
-     * @see de.gluehloch.util.bean.EventMediatorService#fireIndexedPropertyChange(java.lang.String, int, java.lang.Object, java.lang.Object)
-     */
-    public void fireIndexedPropertyChange(String propertyName, int index,
-        Object oldValue, Object newValue) {
-        eventSupport.fireIndexedPropertyChange(propertyName, index, oldValue,
-            newValue);
-    }
+	/**
+	 * @see de.gluehloch.util.bean.EventMediatorService#fireIndexedPropertyChange(java.lang.String,
+	 *      int, java.lang.Object, java.lang.Object)
+	 */
+	public void fireIndexedPropertyChange(String propertyName, int index, Object oldValue, Object newValue) {
+		eventSupport.fireIndexedPropertyChange(propertyName, index, oldValue, newValue);
+	}
 
-    /**
-     * @see de.gluehloch.util.bean.EventMediatorService#getPropertyChangeListeners()
-     */
-    public PropertyChangeListener[] getPropertyChangeListeners() {
-        return eventSupport.getPropertyChangeListeners();
-    }
+	/**
+	 * @see de.gluehloch.util.bean.EventMediatorService#getPropertyChangeListeners()
+	 */
+	public PropertyChangeListener[] getPropertyChangeListeners() {
+		return eventSupport.getPropertyChangeListeners();
+	}
 
-    /**
-     * @see de.gluehloch.util.bean.EventMediatorService#getPropertyChangeListeners(java.lang.String)
-     */
-    public PropertyChangeListener[] getPropertyChangeListeners(
-        String propertyName) {
-        return eventSupport.getPropertyChangeListeners(propertyName);
-    }
+	/**
+	 * @see de.gluehloch.util.bean.EventMediatorService#getPropertyChangeListeners(java.lang.String)
+	 */
+	public PropertyChangeListener[] getPropertyChangeListeners(String propertyName) {
+		return eventSupport.getPropertyChangeListeners(propertyName);
+	}
 
-    /**
-     * @see de.gluehloch.util.bean.EventMediatorService#hasListeners(java.lang.String)
-     */
-    public boolean hasListeners(String propertyName) {
-        return eventSupport.hasListeners(propertyName);
-    }
+	/**
+	 * @see de.gluehloch.util.bean.EventMediatorService#hasListeners(java.lang.String)
+	 */
+	public boolean hasListeners(String propertyName) {
+		return eventSupport.hasListeners(propertyName);
+	}
 
-    /**
-     * @see de.gluehloch.util.bean.EventMediatorService#removePropertyChangeListener(java.beans.PropertyChangeListener)
-     */
-    public void removePropertyChangeListener(PropertyChangeListener listener) {
-        eventSupport.removePropertyChangeListener(listener);
-    }
+	/**
+	 * @see de.gluehloch.util.bean.EventMediatorService#removePropertyChangeListener(java.beans.PropertyChangeListener)
+	 */
+	public void removePropertyChangeListener(PropertyChangeListener listener) {
+		eventSupport.removePropertyChangeListener(listener);
+	}
 
-    /**
-     * @see de.gluehloch.util.bean.EventMediatorService#removePropertyChangeListener(java.lang.String, java.beans.PropertyChangeListener)
-     */
-    public void removePropertyChangeListener(String property,
-        PropertyChangeListener listener) {
-        eventSupport.removePropertyChangeListener(property, listener);
-    }
+	/**
+	 * @see de.gluehloch.util.bean.EventMediatorService#removePropertyChangeListener(java.lang.String,
+	 *      java.beans.PropertyChangeListener)
+	 */
+	public void removePropertyChangeListener(String property, PropertyChangeListener listener) {
+		eventSupport.removePropertyChangeListener(property, listener);
+	}
 
 }

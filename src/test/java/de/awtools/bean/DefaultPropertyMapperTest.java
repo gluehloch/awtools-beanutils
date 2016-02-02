@@ -37,27 +37,27 @@ import org.junit.Test;
  */
 public class DefaultPropertyMapperTest {
 
-    @Test
-    public void testDefaultPropertyMapper() {
-        DefaultPropertyMapper mapper = new DefaultPropertyMapper("file");
-        PropertyBean bean = new PropertyBean();
+	@Test
+	public void testDefaultPropertyMapper() {
+		DefaultPropertyMapper mapper = new DefaultPropertyMapper("file");
+		PropertyBean bean = new PropertyBean();
 
-        File file = new File("test.html");
-        bean.setFile(file);
+		File file = new File("test.html");
+		bean.setFile(file);
 
-        assertEquals(File.class, mapper.getProperty(bean).getClass());
-        assertEquals(file, mapper.getProperty(bean));
-    }
+		assertEquals(File.class, mapper.getProperty(bean).getClass());
+		assertEquals(file, mapper.getProperty(bean));
+	}
 
-    public class PropertyBean {
-        private File file;
+	public class PropertyBean {
+		private File file;
 
-        public void setFile(File _file) {
-            file = _file;
-        }
+		public void setFile(File _file) {
+			file = _file;
+		}
 
-        public File getFile() {
-            return file;
-        }
-    }
+		public File getFile() {
+			return file;
+		}
+	}
 }

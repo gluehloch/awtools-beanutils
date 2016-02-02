@@ -36,17 +36,17 @@ import org.junit.Test;
  */
 public class BeanInstanceUtilsTest {
 
-    @Test
-    public void testBeanFactoryInstantiate() {
-        Object object = BeanInstanceUtils.instantiate("java.lang.String");
-        assertTrue(object instanceof String);
+	@Test
+	public void testBeanFactoryInstantiate() {
+		Object object = BeanInstanceUtils.instantiate("java.lang.String");
+		assertTrue(object instanceof String);
 
-        try {
-            BeanInstanceUtils.instantiate("java.lang.Test");
-            fail("RuntimeException expected!");
-        } catch (RuntimeException ex) {
-            // Expecting a runtime exception.
-        }
-    }
+		try {
+			BeanInstanceUtils.instantiate("java.lang.Test");
+			fail("RuntimeException expected!");
+		} catch (RuntimeException ex) {
+			// Expecting a runtime exception.
+		}
+	}
 
 }

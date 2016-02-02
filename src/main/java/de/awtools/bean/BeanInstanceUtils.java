@@ -21,7 +21,7 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  */
- 
+
 package de.awtools.bean;
 
 /**
@@ -34,42 +34,44 @@ package de.awtools.bean;
  */
 public final class BeanInstanceUtils {
 
-    /** Utility Klasse. */
-    private BeanInstanceUtils() {
-    }
+	/** Utility Klasse. */
+	private BeanInstanceUtils() {
+	}
 
-    /**
-     * Instanziert eine Klasse über deren Paket- und Klassenbezeichner. Falls
-     * dieser Vorgang fehlschlägt, wird eine RuntimeException geworfen.
-     * 
-     * @param className Der Klassenname.
-     * @return Das erzeugte Objekt.
-     */
-    @SuppressWarnings("unchecked")
-    public static <T> T instantiate(final String className) {
-        try {
-            Class<T> clazz = (Class<T>) Class.forName(className);
-            return BeanInstanceUtils.instantiate(clazz);
-        } catch (ClassNotFoundException ex) {
-            throw new RuntimeException(ex);
-        }
-    }
-    
-    /**
-     * Instanziert eine Klasse über dessen Class Objekt. Falls dieser Vorgang
-     * fehlschlägt, wird eine RuntimeException geworfen.
-     *
-     * @param clazz Die zu instanzierende Klasse.
-     * @return Das erzeugte Objekt.
-     */
-    public static <T> T instantiate(final Class<T> clazz) {
-        try {
-            return clazz.newInstance();
-        } catch (InstantiationException ex) {
-            throw new RuntimeException(ex);
-        } catch (IllegalAccessException ex) {
-            throw new RuntimeException(ex);
-        }
-    }
+	/**
+	 * Instanziert eine Klasse über deren Paket- und Klassenbezeichner. Falls
+	 * dieser Vorgang fehlschlägt, wird eine RuntimeException geworfen.
+	 * 
+	 * @param className
+	 *            Der Klassenname.
+	 * @return Das erzeugte Objekt.
+	 */
+	@SuppressWarnings("unchecked")
+	public static <T> T instantiate(final String className) {
+		try {
+			Class<T> clazz = (Class<T>) Class.forName(className);
+			return BeanInstanceUtils.instantiate(clazz);
+		} catch (ClassNotFoundException ex) {
+			throw new RuntimeException(ex);
+		}
+	}
+
+	/**
+	 * Instanziert eine Klasse über dessen Class Objekt. Falls dieser Vorgang
+	 * fehlschlägt, wird eine RuntimeException geworfen.
+	 *
+	 * @param clazz
+	 *            Die zu instanzierende Klasse.
+	 * @return Das erzeugte Objekt.
+	 */
+	public static <T> T instantiate(final Class<T> clazz) {
+		try {
+			return clazz.newInstance();
+		} catch (InstantiationException ex) {
+			throw new RuntimeException(ex);
+		} catch (IllegalAccessException ex) {
+			throw new RuntimeException(ex);
+		}
+	}
 
 }
