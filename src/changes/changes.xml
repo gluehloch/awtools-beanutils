@@ -9,6 +9,9 @@
       <action dev="andrewinkler" type="removed" date="2016-02-01">
         Start with Java 8 support. Moving from Sourceforge to Guihub.
       </action>
+      <action dev="andrewinkler" type="update" date="2016-02-02">
+        Update to commons-beanutils-1.9.2
+      </action>
     </release>
 
     <release version="awtools-beanutils-1.3_a" date="2015-02-21">
